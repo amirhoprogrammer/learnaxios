@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../App.css";
 function Post1() {
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,9 +24,12 @@ function Post1() {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="post1">
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+    <div>
+      <h1>post1</h1>
+      <div className="post1">
+        <h1>{post.title}</h1>
+        <p>{post.body}</p>
+      </div>
     </div>
   );
 }
