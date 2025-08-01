@@ -16,6 +16,10 @@ function Home() {
           <p>lesson3</p>
           <a href="/post1comment">go to lesson3</a>
         </div>
+        <div className="card">
+          <p>lesson4</p>
+          <a href="/commentpostid1">go to lesson4</a>
+        </div>
       </div>
     </div>
   );

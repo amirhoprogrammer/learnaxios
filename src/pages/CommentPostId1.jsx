@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
-function Post1Comment() {
+function CommentPostId1() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/posts/1/comments")
+      .get("https://jsonplaceholder.typicode.com/comments?postId=1")
       .then((response) => {
         setPosts(response.data);
         console.log(response.data);
@@ -35,4 +35,4 @@ function Post1Comment() {
     </div>
   );
 }
-export default Post1Comment;
+export default CommentPostId1;
