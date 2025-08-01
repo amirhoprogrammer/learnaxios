@@ -20,6 +20,10 @@ function Home() {
           <p>lesson4</p>
           <a href="/commentpostid1">go to lesson4</a>
         </div>
+        <div className="card">
+          <p>lesson5</p>
+          <a href="/postspost">go to lesson5</a>
+        </div>
       </div>
     </div>
   );

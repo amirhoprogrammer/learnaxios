@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Post1 from "./pages/Post1";
 import Post1Comment from "./pages/Post1Comment";
 import CommentPostId1 from "./pages/CommentPostId1";
+import PostsPost from "./pages/Post/PostsPost";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/post1" element={<Post1 />} />
       <Route path="/post1comment" element={<Post1Comment />} />
       <Route path="/commentpostid1" element={<CommentPostId1 />} />
+      <Route path="/postspost" element={<PostsPost />} />
     </Routes>
   );
 }

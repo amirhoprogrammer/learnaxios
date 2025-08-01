@@ -10,7 +10,6 @@ function CommentPostId1() {
       .get("https://jsonplaceholder.typicode.com/comments?postId=1")
       .then((response) => {
         setPosts(response.data);
-        console.log(response.data);
         setLoading(false);
       })
       .catch((error) => {
