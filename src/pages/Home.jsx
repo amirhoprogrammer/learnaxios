@@ -10,7 +10,7 @@ function Home() {
         </div>
         <div className="card">
           <p>lesson2</p>
-          <a href="/postlist">go to lesson2</a>
+          <a href="/post1">go to lesson2</a>
         </div>
       </div>
     </div>
