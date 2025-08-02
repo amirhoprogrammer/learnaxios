@@ -1,12 +1,93 @@
-# React + Vite
+# Learn Axios in React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+این پروژه یک نمونه ساده و آموزشی برای یادگیری نحوه استفاده از **Axios** در فریم‌ورک **React** است. هدف این پروژه، آشنایی با روش‌های ارسال و دریافت داده از API‌ها با استفاده از Axios می‌باشد.
 
-Currently, two official plugins are available:
+## ویژگی‌ها (Features)
+- استفاده از Axios برای درخواست‌های HTTP (`GET`, `POST`, `PUT`, `DELETE`)
+- مدیریت State در React برای ذخیره و نمایش داده‌ها
+- ساختار ساده و مناسب برای یادگیری
+- امکان گسترش برای پروژه‌های واقعی
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## پیش‌نیازها (Prerequisites)
+برای اجرای این پروژه، ابتدا باید ابزارهای زیر روی سیستم شما نصب باشد:
+- **Node.js** (نسخه 14 یا بالاتر)
+- **npm** یا **yarn**
+- آشنایی مقدماتی با **React**
 
-## Expanding the ESLint configuration
+## نصب و راه‌اندازی (Installation & Setup)
+ابتدا مخزن پروژه را کلون کنید:
+```bash
+git clone https://github.com/amirhoprogrammer/learnaxios.git
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+سپس وارد پوشه پروژه شوید:
+```bash
+cd learnaxios
+```
+
+پکیج‌ها را نصب کنید:
+```bash
+npm install
+```
+یا با yarn:
+```bash
+yarn install
+```
+
+پروژه را اجرا کنید:
+```bash
+npm start
+```
+یا:
+```bash
+yarn start
+```
+
+## استفاده از Axios (Usage)
+در این پروژه از Axios برای درخواست به API استفاده شده است. نمونه‌ای از کد موجود در پروژه:
+
+```javascript
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
+function App() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(response => {
+        setPosts(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  return (
+    <div>
+      <h1>Posts</h1>
+      <ul>
+        {posts.map(post => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## ساختار پوشه‌ها (Project Structure)
+```
+learnaxios/
+│── public/
+│── src/
+│   ├── components/
+│   ├── App.js
+│   ├── index.js
+│── package.json
+```
+
+## لایسنس (License)
+این پروژه تحت مجوز **MIT** منتشر شده است. شما می‌توانید آن را آزادانه استفاده و ویرایش کنید.
